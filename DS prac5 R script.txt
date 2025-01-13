@@ -1,0 +1,27 @@
+wholesalecustomerdata$Region <- factor(wholesalecustomerdata$Region)
+# Perform the ANOVA
+one.way <- aov(Grocery ~ Region, data = wholesalecustomerdata)
+summary(one.way)
+# Trying Turkey's HSD test
+TukeyHSD(one.way)
+
+
+
+wholesalecustomerdata$Milk<- factor(wholesalecustomerdata$Milk)
+one.way <- aov(Grocery ~ Milk, data = wholesalecustomerdata)
+summary(one.way)
+TukeyHSD(one.way)
+
+
+wholesalecustomerdata$Delicassen <- factor(wholesalecustomerdata$Delicassen)
+one.way <- aov(Detergents_Paper ~ Delicassen, data = wholesalecustomerdata)
+summary(one.way)
+TukeyHSD(one.way)
+
+
+wholesalecustomerdata$Fresh <- factor(wholesalecustomerdata)
+wholesalecustomerdata$Fresh <- factor(wholesalecustomerdata$Fresh)
+one.way <- aov(Detergents_Paper ~ Fresh, data = wholesalecustomerdata)
+summary(one.way)
+TukeyHSD(one.way)
+
